@@ -1,12 +1,5 @@
 /* ===== CSS GLOBAL RESET ===== */
 
-:root{
-  --accent-color-1: #FF582B;
-  --accent-color-2: #FFF646;
-  --text-light-color: #FFF2D7;
-  --btn-bg-color: #161616;
-}
-
 *,
 *::before,
 *::after {

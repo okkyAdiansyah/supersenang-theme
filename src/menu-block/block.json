@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "supersenang/menu-block",
+	"version": "0.1.0",
+	"title": "Menu Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Menu Block to Scaffold Header Navigation or Footer Navigation",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"selectedMenu": {
+			"type": "integer"
+		},
+		"selectedStyles": {
+			"type": "object",
+			"default": {
+				"key": "main-style",
+				"name": "Main Style",
+				"variant": "main"
+			}
+		}
+	},
+	"textdomain": "menu-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

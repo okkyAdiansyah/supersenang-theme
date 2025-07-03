@@ -1,0 +1,38 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+
+.ss-cta--boxed{
+	background: var(--btn-bg-color);
+	font-size: 1.4rem;
+	color: var(--accent-color-2);
+	font-weight: 400;
+	text-transform: uppercase;
+	width: fit-content;
+	padding: .8rem 1.2rem;
+	transform: scale(1);
+	transition: all .4s ease-out;
+
+	&:hover{
+		color: var(--accent-color-1);
+		transform: scale(.8);
+	}
+}
+
+.ss-cta--underline{
+	background: transparent;
+	font-size: 1.6rem;
+	color: var(--text-light-color);
+	font-weight: 400;
+	width: fit-content;
+	transform: scale(1);
+	transition: all .4s ease-out;
+
+	&:hover{
+		color: var(--accent-color-2);
+		transform: scale(1.1);
+	}
+}
