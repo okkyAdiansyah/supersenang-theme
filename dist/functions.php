@@ -136,7 +136,5 @@ function supersenang_theme_support() {
 	 * Add support for responsive embedded content.
 	 */
 	add_theme_support( 'responsive-embeds' );
-
-	add_editor_style( "editor-style.css" );
 }
 add_action( 'after_setup_theme', 'supersenang_theme_support' );

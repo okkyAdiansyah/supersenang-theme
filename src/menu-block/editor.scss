@@ -1,0 +1,51 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.ss-menu-container{
+	width: 100%;
+	display: flex;
+}
+
+.ss-menu--main{
+	align-items: center;
+	justify-content: space-between;
+	padding-block: 1.2rem;
+}
+
+.ss-menu--sec{
+	align-items: flex-start;
+	flex-direction: column;
+	row-gap: 3.5rem;
+}
+
+.ss-menu-item--main{
+	font-size: 1.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--text-light-color);
+	cursor: pointer;
+	transition: all .3s ease-out;
+	transform: scale(1);
+
+	&:hover{
+		transform: scale(.9);
+		color: var(--accent-color-1);
+	}
+}
+
+.ss-menu-item--sec{
+	font-size: 1.8rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: var(--text-light-color);
+	cursor: pointer;
+	transition: all .3s ease-out;
+
+	&:hover{
+		font-weight: 700;
+	}
+}
+
