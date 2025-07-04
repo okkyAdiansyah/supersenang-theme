@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "social-media-connect/social-media-connect",
+	"version": "0.1.0",
+	"title": "Social Media Connect",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Block to add more social media link.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"socmedName": {
+			"type": "string",
+			"default": ""
+		},
+		"socmedLink": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "social-media-connect",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

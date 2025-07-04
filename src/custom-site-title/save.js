@@ -18,7 +18,12 @@ import './style.css';
  */
 export default function save() {
 	return (
-		<a { ...useBlockProps.save({className:'ss-site-title-container'})} href='/'>
+		<a
+			{ ...useBlockProps.save( {
+				className: 'ss-site-title-container',
+			} ) }
+			href="/"
+		>
 			<svg
 				width="268"
 				height="37"

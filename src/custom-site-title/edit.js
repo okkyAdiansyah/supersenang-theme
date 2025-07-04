@@ -31,7 +31,7 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<div { ...useBlockProps({className: 'ss-site-title-container'})}>
+		<div { ...useBlockProps( { className: 'ss-site-title-container' } ) }>
 			<svg
 				width="268"
 				height="37"

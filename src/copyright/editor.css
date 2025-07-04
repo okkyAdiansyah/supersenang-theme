@@ -1,0 +1,15 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.ss-copyright {
+  width: 100%;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18.01px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  color: var(--accent-color-2);
+  text-align: right;
+}/*# sourceMappingURL=editor.css.map */

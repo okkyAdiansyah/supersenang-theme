@@ -1,1 +1,29 @@
-.ss-site-title-container{background-color:transparent;padding:.8rem;width:-moz-fit-content;width:fit-content}.ss-site-title-container svg{transform:scale(.8);transition:all .4s ease-out}.ss-site-title-container svg path{transition:inherit}.ss-site-title-container:hover svg{transform:scale(.9)}.ss-site-title-container:hover svg path{fill:var(--accent-color-1)}
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/custom-site-title/editor.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.ss-site-title-container {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.8rem;
+  background-color: transparent;
+}
+.ss-site-title-container svg {
+  transition: all 0.4s ease-out;
+  transform: scale(0.8);
+}
+.ss-site-title-container svg path {
+  transition: inherit;
+}
+.ss-site-title-container:hover svg {
+  transform: scale(0.9);
+}
+.ss-site-title-container:hover svg path {
+  fill: var(--accent-color-1);
+}
+
+/*# sourceMappingURL=index.css.map*/

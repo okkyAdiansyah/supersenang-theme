@@ -1,1 +1,44 @@
-.ss-cta--boxed{background:var(--btn-bg-color);color:var(--accent-color-2);font-size:1.4rem;font-weight:400;padding:.8rem 1.2rem;text-transform:uppercase;transform:scale(1);transition:all .4s ease-out;white-space:nowrap;width:-moz-fit-content;width:fit-content}.ss-cta--boxed:hover{color:var(--accent-color-1);transform:scale(.8)}.ss-cta--underline{background:transparent;color:var(--text-light-color);font-size:1.6rem;font-weight:400;text-wrap:nowrap;transform:scale(1);transition:all .4s ease-out;width:-moz-fit-content;width:fit-content}.ss-cta--underline:hover{color:var(--accent-color-2);transform:scale(1.1)}
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/cta-button/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.ss-cta--boxed {
+  background: var(--btn-bg-color);
+  font-size: 1.4rem;
+  color: var(--accent-color-2);
+  font-weight: 400;
+  text-transform: uppercase;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.8rem 1.2rem;
+  transform: scale(1);
+  transition: all 0.4s ease-out;
+  white-space: nowrap;
+}
+.ss-cta--boxed:hover {
+  color: var(--accent-color-1);
+  transform: scale(0.8);
+}
+
+.ss-cta--underline {
+  background: transparent;
+  font-size: 1.6rem;
+  color: var(--text-light-color);
+  font-weight: 400;
+  width: -moz-fit-content;
+  width: fit-content;
+  transform: scale(1);
+  transition: all 0.4s ease-out;
+  text-wrap: nowrap;
+}
+.ss-cta--underline:hover {
+  color: var(--accent-color-2);
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=style-index.css.map*/
