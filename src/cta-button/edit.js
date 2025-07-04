@@ -21,6 +21,7 @@ import { SelectControl, TextControl, PanelBody } from '@wordpress/components';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+import { useState } from 'react';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -32,6 +33,7 @@ import './editor.scss';
  */
 export default function Edit({attributes, setAttributes}) {
 	const {selectedStyles, callToAction, path} = attributes;
+	const [targetPath, setTargetPath] = useState(path);
 	return (
 		<>
 			<InspectorControls>
@@ -50,8 +52,9 @@ export default function Edit({attributes, setAttributes}) {
 					<TextControl
 						label={__('Set Target Page', 'cta-button')}
 						help={__('This will set as navigation for the button', 'cta-button')}
-						value={path}
-						onChange={(value) => setAttributes({path: `/${value}`})}
+						value={targetPath}
+						onChange={(value) => setTargetPath(value)}
+						onBlur={(e) => setAttributes({path: `/${e.target.value}`})}
 					/>
 					<SelectControl
 						label={__('Choose the style', 'cta-button')}

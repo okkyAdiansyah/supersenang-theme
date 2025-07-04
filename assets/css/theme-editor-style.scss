@@ -59,3 +59,26 @@ textarea {
   border: none;
   outline: none;
 }
+
+.ss-nav-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: .8rem;
+    padding-inline: 6.9rem;
+    transition: all .4s ease-out;
+    background: transparent;
+
+    &:hover{
+        background: #00000046;
+    }
+
+    .ss-item-container{
+        width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

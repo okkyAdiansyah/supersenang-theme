@@ -5,8 +5,62 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-supersenang-banner {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+.ss-menu-container{
+	width: auto;
+	display: flex;
 }
+
+.ss-menu--main{
+	column-gap: 2.4rem;
+	align-items: center;
+	justify-content: space-between;
+	padding-block: 1.2rem;
+}
+
+.ss-menu--sec{
+	align-items: flex-start;
+	flex-direction: column;
+	row-gap: 3.5rem;
+}
+
+.ss-menu-item--main{
+	cursor: pointer;
+	transition: all .3s ease-out;
+	transform: scale(1);
+
+	&:hover{
+		transform: scale(.9);
+	}
+
+	a{	
+		font-size: 1.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--text-light-color);
+		cursor: pointer;
+		transition: all .3s ease-out;
+		transform: scale(1);
+
+		&:hover{
+			transform: scale(.9);
+			color: var(--accent-color-1);
+		}
+	}
+	
+}
+
+.ss-menu-item--sec{
+	a{
+		font-size: 1.8rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: var(--text-light-color);
+		cursor: pointer;
+		transition: all .3s ease-out;
+
+		&:hover{
+			font-weight: 700;
+		}
+	}
+}
+

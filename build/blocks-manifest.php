@@ -49,7 +49,8 @@ return array(
 			
 		),
 		'supports' => array(
-			'html' => false
+			'html' => false,
+			'className' => true
 		),
 		'textdomain' => 'custom-site-title',
 		'editorScript' => 'file:./index.js',

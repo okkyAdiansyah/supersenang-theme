@@ -147,3 +147,31 @@ body{
         }
     }
 }
+
+.ss-nav-container{
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 3.2rem;
+    padding-bottom: .8rem;
+    padding-inline: 6.9rem;
+    transition: all .4s ease-out;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    &:hover{
+        background: #00000046;
+    }
+
+    .ss-item-container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 12rem;
+    }
+}

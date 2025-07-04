@@ -7,6 +7,13 @@
 import { useBlockProps } from '@wordpress/block-editor';
 
 /**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
@@ -15,10 +22,12 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save({attributes}) {
+	const {path, selectedStyles, callToAction} = attributes;
+
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Cta Button – hello from the saved content!' }
-		</p>
+		<a { ...useBlockProps.save({className: `ss-cta--${selectedStyles}`}) } href={path}>
+			{__(callToAction)}
+		</a>
 	);
 }

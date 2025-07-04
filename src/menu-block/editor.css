@@ -1,0 +1,49 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.ss-menu-container {
+  width: auto;
+  display: flex;
+}
+
+.ss-menu--main {
+  -moz-column-gap: 2.4rem;
+       column-gap: 2.4rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.2rem;
+}
+
+.ss-menu--sec {
+  align-items: flex-start;
+  flex-direction: column;
+  row-gap: 3.5rem;
+}
+
+.ss-menu-item--main {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-light-color);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  transform: scale(1);
+}
+.ss-menu-item--main:hover {
+  transform: scale(0.9);
+  color: var(--accent-color-1);
+}
+
+.ss-menu-item--sec {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text-light-color);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.ss-menu-item--sec:hover {
+  font-weight: 700;
+}/*# sourceMappingURL=editor.css.map */

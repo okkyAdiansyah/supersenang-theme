@@ -1,0 +1,25 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.ss-site-title-container {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.8rem;
+  background-color: transparent;
+}
+.ss-site-title-container svg {
+  transition: all 0.4s ease-out;
+  transform: scale(0.8);
+}
+.ss-site-title-container svg path {
+  transition: inherit;
+}
+.ss-site-title-container:hover svg {
+  transform: scale(0.9);
+}
+.ss-site-title-container:hover svg path {
+  fill: var(--accent-color-1);
+}/*# sourceMappingURL=style.css.map */

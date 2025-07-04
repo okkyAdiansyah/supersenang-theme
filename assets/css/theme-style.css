@@ -135,4 +135,31 @@ body {
 .ss-main-container .ss-cta:hover {
   color: #FF582B;
   transform: scale(0.95);
+}
+
+.ss-nav-container {
+  width: 100dvw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3.2rem;
+  padding-bottom: 0.8rem;
+  padding-inline: 6.9rem;
+  transition: all 0.4s ease-out;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.ss-nav-container:hover {
+  background: rgba(0, 0, 0, 0.2745098039);
+}
+.ss-nav-container .ss-item-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  -moz-column-gap: 12rem;
+       column-gap: 12rem;
 }/*# sourceMappingURL=theme-style.css.map */
