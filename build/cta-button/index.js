@@ -1,1 +1,499 @@
-(()=>{"use strict";var t,e={371:()=>{const t=window.wp.blocks,e=window.wp.i18n,o=window.wp.blockEditor,n=window.wp.components,a=window.React,l=window.ReactJSXRuntime,r=JSON.parse('{"UU":"cta-button/cta-button"}');(0,t.registerBlockType)(r.UU,{edit:function({attributes:t,setAttributes:r}){const{selectedStyles:s,callToAction:c,path:i}=t,[u,b]=(0,a.useState)(i);return(0,l.jsxs)(l.Fragment,{children:[(0,l.jsx)(o.InspectorControls,{children:(0,l.jsxs)(n.PanelBody,{title:(0,e.__)("Call To Action Settings","cta-button"),children:[(0,l.jsx)("p",{children:(0,e.__)("Here you can customize the call-to-action button.","cta-button")}),(0,l.jsx)(n.TextControl,{label:(0,e.__)("Add Your Call-To-Action","cta-button"),value:c,onChange:t=>r({callToAction:t})}),(0,l.jsx)(n.TextControl,{label:(0,e.__)("Set Target Page","cta-button"),help:(0,e.__)("This will set as navigation for the button","cta-button"),value:u,onChange:t=>b(t),onBlur:t=>r({path:`/${t.target.value}`})}),(0,l.jsx)(n.SelectControl,{label:(0,e.__)("Choose the style","cta-button"),value:s,options:[{label:"Boxed Button",value:"boxed"},{label:"Underline Button",value:"underline"}],onChange:t=>r({selectedStyles:t})})]})}),(0,l.jsx)(l.Fragment,{children:(0,l.jsx)("div",{...(0,o.useBlockProps)({className:`ss-cta--${s}`}),children:c})})]})},save:function({attributes:t}){const{path:n,selectedStyles:a,callToAction:r}=t;return(0,l.jsx)("a",{...o.useBlockProps.save({className:`ss-cta--${a}`}),href:n,children:(0,e.__)(r)})}})}},o={};function n(t){var a=o[t];if(void 0!==a)return a.exports;var l=o[t]={exports:{}};return e[t](l,l.exports,n),l.exports}n.m=e,t=[],n.O=(e,o,a,l)=>{if(!o){var r=1/0;for(u=0;u<t.length;u++){for(var[o,a,l]=t[u],s=!0,c=0;c<o.length;c++)(!1&l||r>=l)&&Object.keys(n.O).every(t=>n.O[t](o[c]))?o.splice(c--,1):(s=!1,l<r&&(r=l));if(s){t.splice(u--,1);var i=a();void 0!==i&&(e=i)}}return e}l=l||0;for(var u=t.length;u>0&&t[u-1][2]>l;u--)t[u]=t[u-1];t[u]=[o,a,l]},n.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),(()=>{var t={465:0,901:0};n.O.j=e=>0===t[e];var e=(e,o)=>{var a,l,[r,s,c]=o,i=0;if(r.some(e=>0!==t[e])){for(a in s)n.o(s,a)&&(n.m[a]=s[a]);if(c)var u=c(n)}for(e&&e(o);i<r.length;i++)l=r[i],n.o(t,l)&&t[l]&&t[l][0](),t[l]=0;return n.O(u)},o=globalThis.webpackChunkcta_button=globalThis.webpackChunkcta_button||[];o.forEach(e.bind(null,0)),o.push=e.bind(null,o.push.bind(o))})();var a=n.O(void 0,[901],()=>n(371));a=n.O(a)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/cta-button/block.json":
+/*!***********************************!*\
+  !*** ./src/cta-button/block.json ***!
+  \***********************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cta-button/cta-button","version":"0.1.0","title":"CTA Button","category":"widgets","icon":"smiley","description":"CTA Button with style that you can choose.","example":{},"supports":{"html":false},"attributes":{"path":{"type":"string","default":"/"},"selectedStyles":{"type":"string","default":"boxed"},"callToAction":{"type":"string","default":"Your Call-To-Action"}},"textdomain":"cta-button","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+
+/***/ }),
+
+/***/ "./src/cta-button/edit.js":
+/*!********************************!*\
+  !*** ./src/cta-button/edit.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/cta-button/editor.scss");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+
+
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {Element} Element to render.
+ */
+
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    selectedStyles,
+    callToAction,
+    path
+  } = attributes;
+  const [targetPath, setTargetPath] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(path);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Call To Action Settings', 'cta-button'),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Here you can customize the call-to-action button.', 'cta-button')
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Your Call-To-Action', 'cta-button'),
+          value: callToAction,
+          onChange: value => setAttributes({
+            callToAction: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Set Target Page', 'cta-button'),
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('This will set as navigation for the button', 'cta-button'),
+          value: targetPath,
+          onChange: value => setTargetPath(value),
+          onBlur: e => setAttributes({
+            path: `/${e.target.value}`
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Choose the style', 'cta-button'),
+          value: selectedStyles,
+          options: [{
+            label: 'Boxed Button',
+            value: 'boxed'
+          }, {
+            label: 'Underline Button',
+            value: 'underline'
+          }],
+          onChange: value => setAttributes({
+            selectedStyles: value
+          })
+        })]
+      })
+    }), selectedStyles === 'boxed' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
+          className: `ss-cta--${selectedStyles}`
+        }),
+        children: callToAction
+      })
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
+          className: `ss-cta--${selectedStyles}`
+        }),
+        children: callToAction
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/cta-button/editor.scss":
+/*!************************************!*\
+  !*** ./src/cta-button/editor.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/cta-button/index.js":
+/*!*********************************!*\
+  !*** ./src/cta-button/index.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/cta-button/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/cta-button/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/cta-button/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/cta-button/block.json");
+/**
+ * Registers a new block provided a unique name and an object defining its behavior.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * All files containing `style` keyword are bundled together. The code used
+ * gets applied both to the front of your site and to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+/**
+ * Every block starts by registering a new block type definition.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
+  /**
+   * @see ./edit.js
+   */
+  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
+  /**
+   * @see ./save.js
+   */
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/cta-button/save.js":
+/*!********************************!*\
+  !*** ./src/cta-button/save.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ save)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {Element} Element to render.
+ */
+
+function save({
+  attributes
+}) {
+  const {
+    path,
+    selectedStyles,
+    callToAction
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+      className: `ss-cta--${selectedStyles}`
+    }),
+    href: path,
+    children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(callToAction)
+  });
+}
+
+/***/ }),
+
+/***/ "./src/cta-button/style.scss":
+/*!***********************************!*\
+  !*** ./src/cta-button/style.scss ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = window["React"];
+
+/***/ }),
+
+/***/ "react/jsx-runtime":
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+/***/ ((module) => {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"cta-button/index": 0,
+/******/ 			"cta-button/style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkcopyright"] = globalThis["webpackChunkcopyright"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["cta-button/style-index"], () => (__webpack_require__("./src/cta-button/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

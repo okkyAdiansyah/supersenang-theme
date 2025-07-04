@@ -22,12 +22,17 @@ import { __ } from '@wordpress/i18n';
  *
  * @return {Element} Element to render.
  */
-export default function save({attributes}) {
-	const {path, selectedStyles, callToAction} = attributes;
+export default function save( { attributes } ) {
+	const { path, selectedStyles, callToAction } = attributes;
 
 	return (
-		<a { ...useBlockProps.save({className: `ss-cta--${selectedStyles}`}) } href={path}>
-			{__(callToAction)}
+		<a
+			{ ...useBlockProps.save( {
+				className: `ss-cta--${ selectedStyles }`,
+			} ) }
+			href={ path }
+		>
+			{ __( callToAction ) }
 		</a>
 	);
 }

@@ -1,0 +1,17 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.ss-socmed-link {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text-light-color);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.ss-socmed-link:hover {
+  font-weight: 700;
+}/*# sourceMappingURL=style.css.map */

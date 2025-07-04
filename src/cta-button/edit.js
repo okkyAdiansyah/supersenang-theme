@@ -31,13 +31,15 @@ import { useState } from 'react';
  *
  * @return {Element} Element to render.
  */
-export default function Edit({attributes, setAttributes}) {
-	const {selectedStyles, callToAction, path} = attributes;
-	const [targetPath, setTargetPath] = useState(path);
+export default function Edit( { attributes, setAttributes } ) {
+	const { selectedStyles, callToAction, path } = attributes;
+	const [ targetPath, setTargetPath ] = useState( path );
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Call To Action Settings', 'cta-button')}>
+				<PanelBody
+					title={ __( 'Call To Action Settings', 'cta-button' ) }
+				>
 					<p>
 						{ __(
 							'Here you can customize the call-to-action button.',
@@ -45,46 +47,64 @@ export default function Edit({attributes, setAttributes}) {
 						) }
 					</p>
 					<TextControl
-						label={__('Add Your Call-To-Action', 'cta-button')}
-						value={callToAction}
-						onChange={(value) => setAttributes({callToAction: value})}
+						label={ __( 'Add Your Call-To-Action', 'cta-button' ) }
+						value={ callToAction }
+						onChange={ ( value ) =>
+							setAttributes( { callToAction: value } )
+						}
 					/>
 					<TextControl
-						label={__('Set Target Page', 'cta-button')}
-						help={__('This will set as navigation for the button', 'cta-button')}
-						value={targetPath}
-						onChange={(value) => setTargetPath(value)}
-						onBlur={(e) => setAttributes({path: `/${e.target.value}`})}
+						label={ __( 'Set Target Page', 'cta-button' ) }
+						help={ __(
+							'This will set as navigation for the button',
+							'cta-button'
+						) }
+						value={ targetPath }
+						onChange={ ( value ) => setTargetPath( value ) }
+						onBlur={ ( e ) =>
+							setAttributes( { path: `/${ e.target.value }` } )
+						}
 					/>
 					<SelectControl
-						label={__('Choose the style', 'cta-button')}
-						value={selectedStyles}
-						options={[
+						label={ __( 'Choose the style', 'cta-button' ) }
+						value={ selectedStyles }
+						options={ [
 							{
-								label: "Boxed Button",
-								value: "boxed"
+								label: 'Boxed Button',
+								value: 'boxed',
 							},
 							{
-								label: "Underline Button",
-								value: "underline"
-							}
-						]}
-						onChange={(value) => setAttributes({selectedStyles: value})}
+								label: 'Underline Button',
+								value: 'underline',
+							},
+						] }
+						onChange={ ( value ) =>
+							setAttributes( { selectedStyles: value } )
+						}
 					/>
 				</PanelBody>
 			</InspectorControls>
-			{selectedStyles === "boxed" ? 
+			{ selectedStyles === 'boxed' ? (
 				<>
-					<div {...useBlockProps({className: `ss-cta--${selectedStyles}`})}>
-						{callToAction}
-					</div>
-				</> : 
-				<>
-					<div {...useBlockProps({className: `ss-cta--${selectedStyles}`})}>
-						{callToAction}
+					<div
+						{ ...useBlockProps( {
+							className: `ss-cta--${ selectedStyles }`,
+						} ) }
+					>
+						{ callToAction }
 					</div>
 				</>
-			}
+			) : (
+				<>
+					<div
+						{ ...useBlockProps( {
+							className: `ss-cta--${ selectedStyles }`,
+						} ) }
+					>
+						{ callToAction }
+					</div>
+				</>
+			) }
 		</>
 	);
 }

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "supersenang/footer-logo",
+  "version": "0.1.0",
+  "title": "Footer Logo",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Logo that were used in the footer.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "mediaID": {
+      "type": "integer"
+    },
+    "mediaURL": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "footer-logo",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}
