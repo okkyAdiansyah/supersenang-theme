@@ -5,11 +5,12 @@
  */
 
 .ss-menu-container{
-	width: 100%;
+	width: auto;
 	display: flex;
 }
 
 .ss-menu--main{
+	column-gap: 2.4rem;
 	align-items: center;
 	justify-content: space-between;
 	padding-block: 1.2rem;

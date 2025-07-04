@@ -5,8 +5,26 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-custom-title-block-custom-site-title {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+.ss-site-title-container{
+	width: fit-content;
+	padding: .8rem;
+	background-color: transparent;
+
+	svg{
+		transition: all .4s ease-out;
+		transform: scale(.8);
+		path{
+			transition: inherit;
+		}
+	}
+
+	&:hover{
+		svg{
+			transform: scale(.9);
+			
+			path{
+				fill: var(--accent-color-1);
+			}
+		}
+	}
 }

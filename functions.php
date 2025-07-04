@@ -137,6 +137,11 @@ function supersenang_theme_support() {
 	 */
 	add_theme_support( 'responsive-embeds' );
 
-	add_editor_style( "editor-style.css" );
+	add_editor_style( "/assets/css/theme-editor-style.css" );
+
+	add_theme_support( 'block-patterns' );
+
+	add_theme_support( 'wp-block-styles' );
+
 }
 add_action( 'after_setup_theme', 'supersenang_theme_support' );
